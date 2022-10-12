@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 43.75rem;
+    height: 37.5rem;
+    /* background-color: #f1f1f1; */
+    margin: 6.25rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel {
+    height: 4.375rem;
+    margin: 0.313rem;
+    border-radius: 25px;
+    background-image: repeating-linear-gradient(135deg, rgba(189,189,189,0.1) 0px, rgba(189,189,189,0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
+    flex-grow: 1;
+    flex-shrink: 1;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.panel * {
+    pointer-events: none;
+}
+
+.active {
+    flex-grow: 9999;
+}
+
+
+
+.top {
+    display: flex;
+    height: 4.375rem;
+    align-items: center;
+}
+
+.icon {
+    display: flex;
+    margin-left: 1.25rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #222, #333);
+    border-radius: 50%;
+}
+.icon img {
+    width: 2.5rem;
+}
+.bar {
+    width: 45%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #222;
+    margin: 0 0.575rem 0 auto;
+}
+.title {
+    margin: 0 1.563rem;
+    font-size: 1.875em;
+}
+.price {
+    margin: 0 1.125rem 0 0.625rem;
+    font-size: 1.375em;
+    font-weight: bold;
+}
+
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.info h2 {
+    letter-spacing: 0.188rem;
+    margin-bottom: 0.625rem;
+}
+.info p {
+    line-height: 150%;
+    text-align: justify;
+    margin: 0 0.625rem 0.625rem auto;
+}
+.btn {
+    width: fit-content;
+    padding: 0 0.625rem;
+    background-color: transparent;
+    font-size: 1.0625em;
+    border-radius: 0.625rem;
+    pointer-events: auto!important;
+    transition-duration: 0.2s;
+}
+.btn:hover {
+    transform: scale(1.105);
+}

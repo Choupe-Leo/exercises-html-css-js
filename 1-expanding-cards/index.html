@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Expanding cards</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="panel active">
+            <div class="top">
+                <div class="icon">
+                    <img src="./asset/coffee.png" alt="coffee">
+                </div>
+                <p class="title">Café</p>
+                <div class="bar"></div>
+                <p class="price">5€</p>
+            </div>
+
+            <div class="content">
+                <img src="./asset/coffee.png" alt="coffee">
+                <div class="info">
+                    <h2>Café</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quasi esse accusamus dicta distinctio autem! Cumque, ipsum quibusdam perferendis voluptatem possimus dolore ducimus deleniti maiores eum pariatur excepturi iste sapiente.</p>
+                    <button class="btn">Order</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="top">
+                <div class="icon">
+                    <img src="./asset/bubble-tea.png" alt="bubble tea">
+                </div>
+                <p class="title">Bubble tea</p>
+                <div class="bar"></div>
+                <p class="price">6€</p>
+            </div>
+
+            <div class="content">
+                <img src="./asset/bubble-tea.png" alt="bubble-tea">
+                <div class="info">
+                    <h2>Bubble tea</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, incidunt iusto. Voluptas consectetur dicta culpa repellat architecto tempora deserunt officiis assumenda adipisci commodi explicabo animi molestias magnam, consequuntur, distinctio iste.</p>
+                    <button class="btn">Order</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="top">
+                <div class="icon">
+                    <img src="./asset/cola.png" alt="coca cola">
+                </div>
+                <p class="title">Coca cola</p>
+                <div class="bar"></div>
+                <p class="price">3€</p>
+            </div>
+
+            <div class="content">
+                <img src="./asset/cola.png" alt="coca cola">
+                <div class="info">
+                    <h2>Coca cola</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, incidunt iusto. Voluptas consectetur dicta culpa repellat architecto tempora deserunt officiis assumenda adipisci commodi explicabo animi molestias magnam, consequuntur, distinctio iste.</p>
+                    <button class="btn">Order</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="top">
+                <div class="icon">
+                    <img src="./asset/orange-juice.png" alt="orange juice">
+                </div>
+                <p class="title">Jus d'orange</p>
+                <div class="bar"></div>
+                <p class="price">4€</p>
+            </div>
+
+            <div class="content">
+                <img src="./asset/orange-juice.png" alt="orange-juice">
+                <div class="info">
+                    <h2>Jus d'orange</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, incidunt iusto. Voluptas consectetur dicta culpa repellat architecto tempora deserunt officiis assumenda adipisci commodi explicabo animi molestias magnam, consequuntur, distinctio iste.</p>
+                    <button class="btn">Order</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="top">
+                <div class="icon">
+                    <img src="./asset/milk.png" alt="milk">
+                </div>
+                <p class="title">Lait</p>
+                <div class="bar"></div>
+                <p class="price">3€</p>
+            </div>
+
+            <div class="content">
+                <img src="./asset/milk.png" alt="milk">
+                <div class="info">
+                    <h2>Lait</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, incidunt iusto. Voluptas consectetur dicta culpa repellat architecto tempora deserunt officiis assumenda adipisci commodi explicabo animi molestias magnam, consequuntur, distinctio iste.</p>
+                    <button class="btn">Order</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script>
+
+        const panels = document.querySelectorAll('.panel');
+        const btns = document.querySelectorAll('.btn');
+
+        panels.forEach(panel => {
+
+            panel.addEventListener('click', (e) => {
+                
+                e.target.classList.add('active');
+
+                for(let i = 0; i < panels.length; i++) {
+                    if(panels[i] !== e.target) {
+                        panels[i].classList.remove('active');
+                    }
+                }
+            })
+        })
+
+       for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', (e) => {
+            e.stopPropagation();
+        })
+       }
+
+    </script>
+</body>
+</html>
