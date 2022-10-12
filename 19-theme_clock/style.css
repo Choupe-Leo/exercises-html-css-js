@@ -1,0 +1,153 @@
+/* 1. petit setup */
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Heebo', sans-serif;
+}
+
+/* 2. définir les couleurs thématiques, 
+    sans .dark -> fond noir, accessoirs blancs
+    avec .dark -> fond blanc, les autres noirs
+    petite transition naturelle 0.5s
+*/
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+}
+
+html.dark {
+    --primary-color: #fff;
+    --secondary-color: #333;
+}
+
+html.dark {
+    background-color: #111;
+    color: var(--primary-color);
+}
+
+html {
+    transition: all 0.5s ease-in;
+}
+
+/* 3. styles de bouton .toggle,
+    .clock-container en flex
+*/
+.toggle {
+    position: absolute;
+    top: 100px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 4. positionner .clock en relative (pour limiter ses enfants absolus)
+    style des 3 aiguilles
+*/
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    /* background-color: #f0f0f0; */
+}
+
+.needle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 65px;
+    background-color: var(--primary-color);
+    transform-origin: bottom center;
+}
+
+.needle.hour {
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+    height: 90px;
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.second {
+    height: 95px;
+    background-color: #e74c3c;
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+
+/* 4. le point au millieu des aiguilles,
+    le plus petit point noir comme pseudo class ::after
+*/
+.center-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #e74c3c;
+    transform: translate(-50%, -50%);
+}
+
+.center-point::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    transform: translate(-50%, -50%);
+}
+
+/* 4. styles de la date et l'heure numérique,
+    et le <span></span> rond en chiffre de date
+*/
+.time {
+    font-size: 60px;
+}
+
+.date {
+    color: #aaaa;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.date .circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    transition: all 0.5s ease-in;
+}

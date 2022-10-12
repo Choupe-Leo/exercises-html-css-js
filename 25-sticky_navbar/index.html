@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sticky navbar</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <h1>My website</h1>
+            <ul>
+                <li><a href="#" class="current">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Welcome to my website</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, libero.</p>
+        </div>
+    </div>
+
+    <section class="container content">
+        <h2>Content One</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis iusto magni tenetur nostrum officia error perspiciatis magnam ex similique, vel eveniet culpa doloremque tempore saepe. Consequatur, reprehenderit iusto laudantium ea nemo accusamus amet dicta iure. Perferendis mollitia asperiores, nemo nisi deleniti atque itaque ut autem? Fuga ex similique, voluptates ut eius officia illum illo incidunt eaque quo, alias saepe ad dicta error nostrum obcaecati exercitationem vero nihil, assumenda adipisci molestias? Labore dolorem dolore cupiditate quis ex libero iure quod soluta, hic ad, facilis corrupti reiciendis expedita inventore incidunt cum voluptatum at nulla amet quisquam dolores pariatur officia itaque odit. Soluta.</p>
+
+        <h2>Content Two</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet maxime vel architecto, nam similique enim quo consequatur asperiores, minus, voluptas dolorem consectetur commodi expedita minima nihil illo. Laudantium, deleniti! Laboriosam eligendi odit reprehenderit, officia voluptatem assumenda sapiente tenetur iusto doloremque totam ipsum sit iure corporis vero modi labore! Quo.</p>
+    </section>
+
+    <script>
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', fixNav);
+
+        function fixNav() {
+            if(window.scrollY > nav.offsetHeight + 150) {
+                nav.classList.add('active');
+            } else {
+                nav.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

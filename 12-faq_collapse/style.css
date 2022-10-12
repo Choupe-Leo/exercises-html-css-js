@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+    font-family: 'Mulish', sans-serif;
+}
+
+.title {
+    margin: 50px 0 30px;
+    text-align: center;
+}
+
+.faq-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq {
+    position: relative;
+    margin: 20px 0;
+    border: 1px solid #9fa4a8;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: transparent;
+    overflow: hidden;
+    transition: .3s ease;
+}
+
+.faq.active {
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-title {
+    margin: 0 35px 0 0;
+}
+
+.faq-text {
+    display: none;
+    margin: 30px 0 0;
+}
+
+.faq.active .faq-text {
+    display: block;
+}
+
+.faq-toggle {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.faq-toggle:focus {
+    outline: none;
+}
+
+.faq-toggle .fa-xmark {
+    display: none;
+}
+
+.faq.active .faq-toggle .fa-xmark {
+    display: block;
+    color: #fff;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+    display: none;
+}
+
+.faq.active .faq-toggle {
+    background-color: #9fa4a8;
+}
+
+.faq.active::before, .faq.active::after {
+    position: absolute;
+    z-index: 0;
+    top: 20px;
+    left: 20px;
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    font-size: 7rem;
+    color: #2ecc71;
+    opacity: 0.2;
+}
+
+.faq.active::before {
+    top: -5px;
+    left: -30px;
+    color: #3498db;
+    transform: rotateY(180deg);
+}

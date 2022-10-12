@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Key code event</title>
+</head>
+<body>
+    <div id="insert">
+        
+
+        <div class="key">Appuyez sur une touche clavier</div>
+    </div>
+
+    <script>
+
+        const insert = document.getElementById('insert');
+
+        window.addEventListener('keydown', (e) => {
+            insert.innerHTML = `
+            <div class="key">
+            ${e.key === ' ' ? 'Space' : e.key}
+            <small>event.key</small>
+        </div>
+
+        <div class="key">
+            ${e.keyCode}
+            <small>event.keyCode</small>
+        </div>
+
+        <div class="key">
+            ${e.code}
+            <small>event.code</small>
+        </div>
+            `;
+        })
+
+    </script>
+</body>
+</html>

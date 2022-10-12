@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Scrollez pour voir l'animation</h1>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+    <div class="box">Contenu</div>
+
+    <script>
+        const boxes = document.querySelectorAll('.box');
+
+        window.addEventListener('scroll', checkBoxes); //when scroll, check position of each box
+
+        checkBoxes(); // set initially because if not, the first boxes on top will be invisible
+
+        function checkBoxes() {
+            const triggerBottom = window.innerHeight / 5 * 4; // a trigger point whose height is a little bit less than window height
+            boxes.forEach(box => {
+            //get viewpoint info for top of the box
+                let boxTop = box.getBoundingClientRect().top;
+            // if the top of the box is less than trigger point
+                if(boxTop < triggerBottom) {
+                    box.classList.add('show');
+                }else {
+                    box.classList.remove('show');
+                }
+            })
+        }
+        // 1. set a trigger point for the bottom of window
+        // 2. loop boxes as a node list
+        // 3. get info for the top of box
+        // 4. top of box < trigger bottom of window, scroll in
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+:root {
+    --primary-color: #22254b;
+    --secondary-color: #373b69;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+}
+
+/* searching box */
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+}
+
+.search {
+    padding: 0.5rem 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    background-color: transparent;
+    color: #fff;
+}
+
+.search:focus {
+    outline: none;
+    background-color: var(--primary-color);
+}
+
+.search::placeholder {
+    color: #f4f4f4;
+}
+
+
+/* movie card */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* card image, title and note part */
+.movie {
+    position: relative;
+    width: 300px;
+    margin: 1rem;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.movie img {
+    width: 100%;
+}
+
+.movie-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+    color: #eee;
+}
+
+.movie-info h3 {
+    margin-top: 0;
+}
+
+.movie-info span {
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: var(--primary-color);
+}
+
+.movie-info span.green {
+    color: #90ee90;
+}
+
+.movie-info span.orange {
+    color: #ffa500;
+}
+
+.movie-info span.red {
+    color: #ff0000;
+}
+
+/* card overview part */
+.overview {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem;
+    max-height: 100%;
+    background-color: #fff;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview {
+    transform: translateY(0);
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form wave</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Connexion</h1>
+
+        <form>
+            <div class="form-control">
+                <input type="text" required>
+                <label>Email</label>
+            </div>
+
+            <div class="form-control">
+                <input type="password" required>
+                <label>Mot de passe</label>
+            </div>
+
+            <button class="login-btn">Se connecter</button>
+
+            <p class="register-text">J n'ai pas de compte, <a href="#">je m'en crée un</a></p>
+        </form>
+
+    </div>
+
+    <script>
+        const labels = document.querySelectorAll('.form-control label');
+
+        labels.forEach(label => {
+            label.innerHTML = label.innerText                     // 1. get the innerText(each letter)
+                .split('')                                        // 2. pass a ''(empty string), split letters into an array
+                // 6. set span style -> transition delay
+                .map((letter, index) => `<span style="transition-delay: ${index*25}ms">${letter}</span>`) // 3. map it into an array of letters with spans around it
+                .join('')                                         // 4. turn back to string; f12 -> Elements tab, labels has been wrapped in <span></span>
+        })
+
+        // 5. go back to CSS, add transition delay for spans
+    </script>
+</body>
+</html>

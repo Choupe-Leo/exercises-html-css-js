@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blurring loading page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="bg"></section>
+    <div class="loading-text">0%</div>
+
+    <script>
+        const bg = document.querySelector('.bg');
+        const loadText = document.querySelector('.loading-text');
+
+        let load = 0;
+
+        let int = setInterval(blurring, 30);//millisecondes
+
+        function blurring() {
+            load++;
+
+            if(load > 99) {
+                clearInterval(int);
+            }
+
+            loadText.innerText = `${load}%`;
+            loadText.style.opacity = scale(load, 0, 100, 1, 0);
+            bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
+        }
+
+        function scale(num, inMin, inMax, outMin, outMax) {
+            return ((num - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+        }
+    </script>
+</body>
+</html>

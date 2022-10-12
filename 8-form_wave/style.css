@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Ubuntu';
+    background-color: steelBlue;
+    color: #fff;
+}
+
+.container {
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 40px;
+    border-radius: 5px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container a {
+    text-decoration: none;
+    color: lightblue;
+}
+
+.form-control {
+    position: relative;
+    width: 300px;
+    margin: 20px 0 40px;
+}
+
+.form-control input {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    padding: 15px 0;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-bottom: 2px #fff solid;
+}
+
+.form-control input:focus, .form-control input:valid{
+    outline: none;
+    border-bottom-color: lightblue;
+}
+
+.login-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+    background-color: lightblue;
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+.login-btn:focus {
+    outline: none;
+}
+
+.register-text {
+    margin-top: 30px;
+}
+
+.form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+
+/* 5. add transition delay for span */
+.form-control label span {
+    display: inline-block; /* inline by default */
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.4s cubic-bezier(1,-0.33,.82,1);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    color: lightblue;
+    transform: translateY(-30px);
+}
+
+/* 6. back to JS, add transition delay to each index of span */
