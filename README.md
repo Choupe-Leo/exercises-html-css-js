@@ -26,5 +26,6 @@
   <li><a href="https://choupe-leo.github.io/projets-html-css-js/23-kienetic_loader/index.html">Chargeur cinétique</a></li>
   <li><a href="https://choupe-leo.github.io/projets-html-css-js/24-effect_squelette/index.html">Effet squelette</a></li>
   <li><a href="https://choupe-leo.github.io/projets-html-css-js/25-sticky_navbar/index.html">Barre de navigation fixée</a></li>
+  <li><a href="https://choupe-leo.github.io/projets-html-css-js/26-double_vertical_slider/index.html">Slide vertical à double sens</a></li>
   
 </ol>
