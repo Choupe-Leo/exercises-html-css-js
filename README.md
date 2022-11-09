@@ -29,5 +29,6 @@
   <li><a href="https://choupe-leo.github.io/projets-html-css-js/26-double_vertical_slider/index.html">Slide vertical à double sens</a></li>
   <li><a href="https://choupe-leo.github.io/projets-html-css-js/27-random_notification/index.html">Notifications aléatoires</a></li>
   <li><a href="https://choupe-leo.github.io/projets-html-css-js/28-github_profile/index.html">Profil sur github</a></li>
+  <li><a href="https://choupe-leo.github.io/projets-html-css-js/29-double_heart_click/index.html">Effet de likey double clique</a></li>
   
 </ol>
