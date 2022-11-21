@@ -30,5 +30,7 @@
   <li><a href="https://choupe-leo.github.io/projets-html-css-js/27-random_notification/index.html">Notifications aléatoires</a></li>
   <li><a href="https://choupe-leo.github.io/projets-html-css-js/28-github_profile/index.html">Profil sur github</a></li>
   <li><a href="https://choupe-leo.github.io/projets-html-css-js/29-double_heart_click/index.html">Effet de likey double clique</a></li>
+  <li><a href="https://choupe-leo.github.io/projets-html-css-js/30-auto_text_effect/index.html">Effet de text automatique</a></li>
+  <li><a href="https://choupe-leo.github.io/projets-html-css-js/31-code_generator/index.html">Générateur de code aléatoire</a></li>
   
 </ol>
